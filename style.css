@@ -79,19 +79,25 @@ nav a:hover{
 }
 
 /* Hero */
-.hero{
-    height:100vh;
+.hero {
+    height: 100vh;
+    min-height: 500px; /* prevents it from becoming too small */
+    
     background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45)),
-    url('Banner.jpeg');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
+    url('Banner\ 3.avif');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
+
 .hero-content{
     animation:fadeUp 1.3s ease;
 }
@@ -308,28 +314,232 @@ footer h3{
         transform:translateY(0);
     }
 }
-/* Responsive */
-@media(max-width:768px){
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Large Screens */
+@media(max-width:1200px){
+
+    .hero-content h1{
+        font-size:60px;
+    }
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* Tablets */
+@media(max-width:992px){
 
     header{
-        flex-direction:column;
-        gap:15px;
+        padding:16px 5%;
+    }
+
+    .hero{
+        padding:0 30px;
+        text-align:center;
     }
 
     .hero-content h1{
-        font-size:42px;
+        font-size:52px;
+        line-height:1.2;
+    }  .hero-content p{
+        font-size:19px;
     }
 
-    .hero-content p{
-        font-size:18px;
-    }
-
-    .section-title{
-        font-size:38px;
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
     }
 
     .contact-form{
+        width:90%;
+    }
+
+    .section-title{
+        font-size:42px;
+    }
+}
+
+/* Mobile Devices */
+@media(max-width:768px){
+
+    /* Header */
+    header{
+        flex-direction:column;
+        padding:15px 20px;
+        gap:15px;
+    }
+ nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0;
+        font-size:15px;
+    }
+
+    /* Hero */
+    .hero{
+        height:100vh;
+        padding:0 20px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    .hero-content p{
+        font-size:16px;
+        margin-bottom:28px;
+    }
+ .btn{
+        padding:14px 32px;
+        font-size:15px;
+    }
+
+    /* Section Titles */
+    .section-title{
+        font-size:34px;
+        margin:70px 0 40px;
+    }
+
+    .section-title::after{
+        width:90px;
+    }
+
+    /* Product Grid */
+    .products{
+        width:92%;
+        grid-template-columns:1fr;
+        gap:28px;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+
+    .card img{
+        height:340px;
+    }
+ .card-content{
+        padding:20px;
+    }
+
+    .card-content h3{
+        font-size:22px;
+    }
+
+    .price{
+        font-size:22px;
+    }
+
+    .buy-btn{
+        width:100%;
+        padding:14px;
+        font-size:15px;
+    }
+
+    /* About & Contact */
+    .about,
+    .contact{
+        width:92%;
+        margin:120px auto 80px;
+    }
+
+    .about-content{
+        padding:28px;
+    }
+
+    .about-content p{
+        font-size:16px;
+        line-height:1.8;
+    } .about-highlight{
+        font-size:19px;
+    }
+
+    /* Contact Form */
+    .contact-form{
         width:100%;
         padding:25px;
+        border-radius:20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        padding:14px;
+        font-size:15px;
+    }
+
+    .contact-form button{
+        width:100%;
+        padding:15px;
+        font-size:15px;
+    }
+
+    /* Footer */
+    footer{
+        padding:50px 20px 25px;
+    }
+
+    footer h3{
+        font-size:28px;
+    } .social-icons{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .social-icons a{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+
+    .footer-details p{
+        font-size:15px;
+    }
+
+    .footer-bottom p{
+        font-size:13px;
+    }
+}
+
+/* Small Mobile Devices */
+@media(max-width:480px){
+
+    .hero-content h1{
+        font-size:30px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    } .section-title{
+        font-size:28px;
+    }
+
+    .card img{
+        height:300px;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
     }
 }
